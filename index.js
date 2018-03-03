@@ -1,8 +1,8 @@
-var score, roundScore, activePLayer;
+var score, roundScore, activePlayer;
 
 var scores = [0,0];
 var roundScore = 0;
-activePLayer = 1;
+activePlayer = 0;
 
 var dice = document.querySelector(".dice");
 dice.style.display = "none";
@@ -17,6 +17,13 @@ btnRoll.addEventListener("click", function(){
   var diceDOM = document.querySelector(".dice");
   diceDOM.style.display = "block";
   diceDOM.src = "dice-" + dice + ".png";
+
+  if (dice !== 1){
+    roundScore += dice;
+    document.querySelector("#current-" + activePlayer).textContent = roundScore;
+  }else{
+
+  }
 });
 
 // document.querySelector("#current-" + activePLayer).textContent = dice;
